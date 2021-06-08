@@ -1,0 +1,1 @@
+$("#logo").load("/assets/icons/graphide-logo.svg");
