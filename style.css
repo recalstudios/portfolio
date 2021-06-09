@@ -18,6 +18,12 @@
 /* 1.1 Fonts & Variables */
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap'); /* Source Code Pro */
 
+@font-face
+{
+    font-family: "Gilroy ExtraBold";
+    src: url("/assets/fonts/gilroy.otf");
+}
+
 :root
 {
     --theme: 73, 50, 126;
