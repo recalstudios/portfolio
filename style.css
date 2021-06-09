@@ -10,11 +10,14 @@
         2.2 Footer
     3 Section selectors
         3.1 Logo
+        3.2 Start page
     4 Animations
  */
 
 /* 1 BROAD SELECTORS */
 /* 1.1 Fonts & Variables */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap'); /* Source Code Pro */
+
 :root
 {
     --theme: 73, 50, 126;
@@ -43,6 +46,9 @@ h2
 {
     font-size: 2rem;
     margin: 0;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 200;
+    color: rgba(var(--theme), .7);
 }
 
 /* 1.4 Scroll bar */
@@ -63,14 +69,14 @@ h2
     stroke: rgb(var(--theme));
     transform: scale(.9);
     opacity: .7;
-    animation: in 2.1s ease forwards .4s;
+    animation: in 2100ms ease forwards 400ms;
 }
 
 #logo > * > * > :nth-child(1)
 {
     stroke-dasharray: 400;
     stroke-dashoffset: 400;
-    animation: draw .7s ease-in forwards;
+    animation: draw 700ms ease-in forwards;
     opacity: 0;
 }
 
@@ -78,7 +84,7 @@ h2
 {
     stroke-dasharray: 400;
     stroke-dashoffset: -400;
-    animation: draw .3s linear forwards .7s;
+    animation: draw 300ms linear forwards 700ms;
     opacity: 0;
 }
 
@@ -86,8 +92,46 @@ h2
 {
     stroke-dasharray: 400;
     stroke-dashoffset: -400;
-    animation: draw .8s ease-out forwards 1s;
+    animation: draw 800ms ease-out forwards 1s;
     opacity: 0;
+}
+
+/* 3.2 Start page */
+#name
+{
+    margin-top: -50px;
+    opacity: 0;
+    transform: translateY(.5em);
+    animation: in 500ms ease forwards 1800ms;
+}
+
+#slogan
+{
+    position: relative;
+    margin-top: 1rem;
+}
+
+#slogan::before
+{
+    position: absolute;
+    content: "";
+    inset: 0;
+    background: rgb(var(--accent));
+    animation: type 2s steps(16) forwards 2s;
+}
+
+#slogan::after
+{
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    content: "";
+    opacity: 0;
+    background: rgba(var(--theme), .7);
+    animation: type 2s steps(16) forwards 2s,
+               blink 800ms linear infinite 1700ms;
+    width: 1ch;
+    height: 2px;
 }
 
 /* 4 ANIMATIONS */
@@ -106,5 +150,26 @@ h2
     {
         stroke-dashoffset: 0;
         opacity: 1;
+    }
+}
+
+@keyframes type
+{
+    to
+    {
+        left: 100%;
+    }
+}
+
+@keyframes blink
+{
+    from
+    {
+        opacity: 1;
+    }
+
+    to
+    {
+        opacity: 0;
     }
 }
