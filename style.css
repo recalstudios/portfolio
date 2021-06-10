@@ -115,6 +115,8 @@ h2
 {
     position: relative;
     margin-top: 1rem;
+    transform: translateX(8ch);
+    animation: in 2s steps(16) forwards 2200ms;
 }
 
 #slogan::before
@@ -123,7 +125,7 @@ h2
     content: "";
     inset: 0;
     background: rgb(var(--accent));
-    animation: type 2s steps(16) forwards 2s;
+    animation: type 2s steps(16) forwards 2200ms;
 }
 
 #slogan::after
@@ -134,10 +136,10 @@ h2
     content: "";
     opacity: 0;
     background: rgba(var(--theme), .7);
-    animation: type 2s steps(16) forwards 2s,
-               blink 800ms linear infinite 1700ms;
+    animation: type 2s steps(16) forwards 2200ms,
+               blink 900ms linear infinite 2s;
     width: 1ch;
-    height: 2px;
+    height: 3px;
 }
 
 /* 4 ANIMATIONS */
@@ -161,21 +163,11 @@ h2
 
 @keyframes type
 {
-    to
-    {
-        left: 100%;
-    }
+    to { left: 100%; }
 }
 
 @keyframes blink
 {
-    from
-    {
-        opacity: 1;
-    }
-
-    to
-    {
-        opacity: 0;
-    }
+    0% { opacity: 1; }
+    50% { opacity: 0; }
 }
