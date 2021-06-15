@@ -78,7 +78,7 @@ h2
 #logo > * > * > :nth-child(1)
 {
     stroke-dasharray: 400;
-    stroke-dashoffset: 400;
+    stroke-dashoffset: 1200;
     animation: draw 700ms ease-in forwards;
     opacity: 0;
 }
@@ -86,7 +86,7 @@ h2
 #logo > * > * > :nth-child(3)
 {
     stroke-dasharray: 400;
-    stroke-dashoffset: -400;
+    stroke-dashoffset: 400;
     animation: draw 300ms linear forwards 700ms;
     opacity: 0;
 }
@@ -94,7 +94,7 @@ h2
 #logo > * > * > :nth-child(2)
 {
     stroke-dasharray: 400;
-    stroke-dashoffset: -400;
+    stroke-dashoffset: 400;
     animation: draw 800ms ease-out forwards 1s;
     opacity: 0;
 }
@@ -156,7 +156,7 @@ h2
 {
     to
     {
-        stroke-dashoffset: 0;
+        stroke-dashoffset: 800;
         opacity: 1;
     }
 }
