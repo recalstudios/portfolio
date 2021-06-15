@@ -52,9 +52,6 @@ h2
 {
     font-size: 2rem;
     margin: 0;
-    font-family: "Source Code Pro", monospace;
-    font-weight: 200;
-    color: rgba(var(--theme), .7);
 }
 
 /* 1.4 Scroll bar */
@@ -114,6 +111,8 @@ h2
 #slogan
 {
     position: relative;
+    font-family: "Source Code Pro", monospace;
+    color: rgba(var(--theme), .6);
     margin-top: 1rem;
     transform: translateX(8ch);
     animation: in 2s steps(16) forwards 2200ms;
@@ -131,15 +130,16 @@ h2
 #slogan::after
 {
     position: absolute;
-    bottom: 5px;
+    bottom: 4px;
     left: 0;
     content: "";
     opacity: 0;
-    background: rgba(var(--theme), .7);
+    background: rgba(var(--theme), .6);
     animation: type 2s steps(16) forwards 2200ms,
-               blink 900ms linear infinite 2s;
-    width: 1ch;
-    height: 3px;
+               blink 1s linear infinite 2s;
+    width: 2px;
+    height: 1em;
+    transform: translateX(4px);
 }
 
 /* 4 ANIMATIONS */
@@ -168,6 +168,6 @@ h2
 
 @keyframes blink
 {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
+    0%, 50% { opacity: 1; }
+    65% { opacity: 0; }
 }
