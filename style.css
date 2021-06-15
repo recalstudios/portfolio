@@ -16,7 +16,7 @@
 
 /* 1 BROAD SELECTORS */
 /* 1.1 Fonts & Variables */
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap'); /* Source Code Pro */
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;600&display=swap"); /* Source Code Pro */
 
 @font-face
 {
@@ -108,38 +108,32 @@ h2
     animation: in 500ms ease forwards 1800ms;
 }
 
-#slogan
+#subheader
 {
     position: relative;
     font-family: "Source Code Pro", monospace;
+    font-weight: 300;
     color: rgba(var(--theme), .6);
     margin-top: 1rem;
-    transform: translateX(8ch);
-    animation: in 2s steps(16) forwards 2200ms;
 }
 
-#slogan::before
-{
-    position: absolute;
-    content: "";
-    inset: 0;
-    background: rgb(var(--accent));
-    animation: type 2s steps(16) forwards 2200ms;
-}
-
-#slogan::after
+#subheader::after
 {
     position: absolute;
     bottom: 4px;
-    left: 0;
+    right: 0;
     content: "";
     opacity: 0;
     background: rgba(var(--theme), .6);
-    animation: type 2s steps(16) forwards 2200ms,
-               blink 1s linear infinite 2s;
+    animation: blink 1s linear infinite 2s;
     width: 2px;
     height: 1em;
     transform: translateX(4px);
+}
+
+#keyword
+{
+    font-weight: 600;
 }
 
 /* 4 ANIMATIONS */
@@ -159,11 +153,6 @@ h2
         stroke-dashoffset: 800;
         opacity: 1;
     }
-}
-
-@keyframes type
-{
-    to { left: 100%; }
 }
 
 @keyframes blink
