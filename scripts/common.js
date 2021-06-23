@@ -23,10 +23,10 @@ setTimeout(function ()
             if (index !== keywords.length - 1) setTimeout(function ()
             {
                 erase(keywordHolder);
-            }, 3000);
-        }, index * 5000);
+            }, 2000);
+        }, index * 4000);
     });
-}, 4000);
+}, 3700);
 
 // Functions
 function write(word, holder)
@@ -36,7 +36,7 @@ function write(word, holder)
     if (++iteration < word.length) setTimeout(function ()
     {
         write(word, holder);
-    }, 130);
+    }, 100);
 }
 
 function erase(holder)
@@ -45,5 +45,5 @@ function erase(holder)
     if (holder.innerHTML.length > 0) setTimeout(function ()
     {
         erase(holder);
-    }, 130);
+    }, 100);
 }
