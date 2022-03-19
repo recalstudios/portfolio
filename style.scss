@@ -1,0 +1,146 @@
+/* STYLESHEET TABLE OF CONTENTS
+    1 Broad selectors
+        1.1 Fonts & Variables
+        1.2 Entire page
+        1.3 Tag selectors
+    3 Section selectors
+        3.1 Logo
+        3.2 Start page
+    4 Animations
+ */
+
+// 1.1 Fonts & Variables
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;600&display=swap"); // Source Code Pro
+
+@font-face
+{
+    font-family: "Gilroy ExtraBold";
+    src: url("/assets/fonts/gilroy.otf");
+}
+
+:root
+{
+    --theme: 73, 50, 126;
+    --accent: 226, 221, 240;
+}
+
+// 1.2 Entire page
+body
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(var(--theme));
+    background: rgb(var(--accent));
+    font-family: "Gilroy ExtraBold", sans-serif;
+}
+
+// 1.3 Tag selectors
+h1
+{
+    font-size: 4rem;
+    margin: 0;
+}
+
+h2
+{
+    font-size: 2rem;
+    margin: 0;
+}
+
+// 3.1 Logo
+#logo
+{
+    display: block;
+    width: 40rem;
+    stroke: rgb(var(--theme));
+    transform: scale(.9);
+    opacity: .7;
+    animation: in 2100ms ease forwards 400ms;
+}
+
+#logo > * > * > :nth-child(1)
+{
+    stroke-dasharray: 400;
+    stroke-dashoffset: 1200;
+    animation: draw 700ms ease-in forwards;
+    opacity: 0;
+}
+
+#logo > * > * > :nth-child(3)
+{
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: draw 300ms linear forwards 700ms;
+    opacity: 0;
+}
+
+#logo > * > * > :nth-child(2)
+{
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: draw 800ms ease-out forwards 1s;
+    opacity: 0;
+}
+
+// 3.2 Start page
+#name
+{
+    margin-top: -50px;
+    opacity: 0;
+    transform: translateY(.5em);
+    animation: in 500ms ease forwards 1800ms;
+}
+
+#subheader
+{
+    position: relative;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 300;
+    color: rgba(var(--theme), .6);
+    margin-top: 1rem;
+}
+
+#subheader::after
+{
+    position: absolute;
+    bottom: 4px;
+    right: 0;
+    content: "";
+    opacity: 0;
+    background: rgba(var(--theme), .6);
+    animation: blink 1s linear infinite 2s;
+    width: 2px;
+    height: 1em;
+    transform: translateX(4px);
+}
+
+#keyword
+{
+    font-weight: 600;
+}
+
+// 4 Animations
+@keyframes in
+{
+    to
+    {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+@keyframes draw
+{
+    to
+    {
+        stroke-dashoffset: 800;
+        opacity: 1;
+    }
+}
+
+@keyframes blink
+{
+    0%, 50% { opacity: 1; }
+    65% { opacity: 0; }
+}

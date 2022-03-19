@@ -1,2 +1,3 @@
-# graphide-website
-This is the website for our organisation.
+# portfolio
+
+Source for our brand portfolio
