@@ -40,7 +40,8 @@ div
     aspect-ratio: 1;
     margin: -6rem;
     background: linear-gradient(45deg, $accent, $primary);
-    mask: url("/assets/brand/logo.svg");
+    mask-image: url("/assets/brand/logo.svg");
+    -webkit-mask-image: url("/assets/brand/logo.svg");
     transform: scale(.85);
     opacity: 0;
     animation: in .9s ease forwards .2s;
