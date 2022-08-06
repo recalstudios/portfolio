@@ -2,11 +2,13 @@
     1 Declarations
         1.1 Fonts
         1.2 Colors
-    2 Sections
-        2.1 General
-        2.2 Title & logo
-        2.3 Text
-        2.4 Shape divider
+    2 Page sections
+        2.1 General styling
+        2.2 Header
+        2.3 Introduction
+    3 Elements
+        3.1 Text
+    4 Utility classes
  */
 
 // 1.1 Fonts
@@ -14,15 +16,18 @@
 
 // 1.2 Colors
 $dark: #212227;
+$medium: #35395a;
 $accent: #40446e;
 $primary: #8892ec;
 $light: #d3d6f0;
 $background: #ffffff;
+$gradient: linear-gradient(45deg, $accent, $primary);
 
-// 2.1 General
+// 2.1 General styling
 *
 {
     margin: 0;
+    line-height: 1em;
 }
 
 body
@@ -32,68 +37,79 @@ body
     align-items: center;
     justify-content: center;
     color: $light;
-    background: $background;
+    background: $dark;
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 
-// 2.2 Title & logo
-#title
+// 2.2 Header
+header
 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    width: 100%;
-    height: 25rem;
-    padding-bottom: 7rem;
-    background: linear-gradient(45deg, $accent, $primary);
-    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
 }
 
-#logo
+// 2.3 Introduction
+#introduction
 {
-    width: 15rem;
-    aspect-ratio: 1;
-    margin: -3rem;
-    background: $light;
-    mask-image: url("/assets/brand/logo.svg");
-    -webkit-mask-image: url("/assets/brand/logo.svg");
+    display: grid;
+    place-items: center;
+
+    #banner
+    {
+        grid-area: 1 / 1;
+        position: relative;
+        top: -1.1rem;
+        width: calc(100vw + 2rem);
+        height: 30rem;
+        background: $gradient;
+        mask-image: url("assets/brand/banner.svg"),
+        linear-gradient(to bottom, rgba(black, .7), rgba(black, 1));
+        mask-size: cover;
+        mask-position: center;
+        mask-composite: subtract;
+        overflow: hidden;
+    }
+
+    .logo
+    {
+        grid-area: 1 / 1;
+        width: 18rem;
+        aspect-ratio: 1;
+        margin: -3rem;
+        background: $gradient;
+        mask-image: url("/assets/brand/logo.svg");
+        -webkit-mask-image: url("/assets/brand/logo.svg");
+    }
+
+    .shadow
+    {
+        grid-area: 1 / 1;
+        opacity: .5;
+        filter: blur(7px);
+    }
 }
 
-// 2.3 Text
+// 3.1 Text
 h1
 {
     font-size: 4rem;
-}
-
-h3
-{
-    color: $dark;
-    font-weight: 600;
+    padding: 1rem;
 }
 
 p
 {
     max-width: 70ch;
     padding: 1rem 0;
-    color: $dark;
+    line-height: 1.5em;
 }
 
-// 2.4 Shape divider
-#shape-divider
+// 4 Utility classes
+.font-gradient
 {
-    width: 100%;
-    transform: rotate(180deg) translateY(150px);
-
-    svg
-    {
-        display: block;
-        width: calc(100% + 1.3px);
-        height: 150px;
-    }
-
-    .shape-fill
-    {
-        fill: $background;
-    }
+    color: transparent;
+    background: $gradient;
+    -webkit-background-clip: text;
 }
