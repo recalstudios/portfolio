@@ -9,6 +9,7 @@
         2.4 Main content
     3 Elements
         3.1 Text
+        3.2 Links
     4 Utility classes
  */
 
@@ -111,6 +112,13 @@ p
 {
     padding: 1rem 0;
     line-height: 1.5em;
+}
+
+// 3.2 Links
+a
+{
+    text-decoration: none;
+    color: unset;
 }
 
 // 4 Utility classes
