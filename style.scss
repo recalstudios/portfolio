@@ -6,6 +6,7 @@
         2.1 General styling
         2.2 Header
         2.3 Introduction
+        2.4 Main content
     3 Elements
         3.1 Text
     4 Utility classes
@@ -92,6 +93,13 @@ header
     }
 }
 
+// 2.4 Main content
+#content
+{
+    max-width: 70ch;
+    padding-bottom: 1rem;
+}
+
 // 3.1 Text
 h1
 {
@@ -101,7 +109,6 @@ h1
 
 p
 {
-    max-width: 70ch;
     padding: 1rem 0;
     line-height: 1.5em;
 }
