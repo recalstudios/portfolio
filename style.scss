@@ -117,6 +117,7 @@ p
 // 3.2 Links
 a
 {
+    display: flex; // For some reason this is needed for the cards to fill the element properly
     text-decoration: none;
     color: unset;
 }
